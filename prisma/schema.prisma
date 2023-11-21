@@ -11,9 +11,10 @@ datasource db {
 }
 
 model Country {
-  id     Int    @id @default(autoincrement())
-  name   String
-  cities City[]
+  id      Int     @id @default(autoincrement())
+  name    String
+  visited Boolean @default(false)
+  cities  City[]
 }
 
 model City {
