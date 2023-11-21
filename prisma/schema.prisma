@@ -11,14 +11,14 @@ datasource db {
 }
 
 model Country {
-  id     Int @id @default(autoincrement ())
+  id     Int    @id @default(autoincrement())
   name   String
   cities City[]
 }
 
 model City {
-  id        Int @id @default(autoincrement ())
+  id        Int     @id @default(autoincrement())
   name      String
-  country   Country @relation(fields: [countryId], references:[id])
-  countryId Int 
+  country   Country @relation(fields: [countryId], references: [id])
+  countryId Int
 }
