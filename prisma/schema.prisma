@@ -11,15 +11,15 @@ datasource db {
 }
 
 model Country {
-  id      Int     @id @default(autoincrement())
-  name    String
-  visited Boolean @default(false)
-  cities  City[]
+  id     Int    @id @default(autoincrement())
+  name   String
+  cities City[]
 }
 
 model City {
   id        Int     @id @default(autoincrement())
   name      String
   country   Country @relation(fields: [countryId], references: [id])
+  visited   Boolean @default(false)
   countryId Int
 }
